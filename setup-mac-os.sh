@@ -16,8 +16,8 @@ main() {
     clone_dotfiles_repo
     # Installing all packages in Dotfiles repository's Brewfile
     install_packages_with_brewfile
-    # Changing default shell to Fish
-    change_shell_to_fish
+    # Changing default shell to zsh
+    change_shell_to_zsh
     # Configuring git config file
     configure_git
     # Installing powerline-status so that setup_symlinks can setup the symlinks
@@ -32,19 +32,17 @@ main() {
     setup_symlinks
     # Setting up Vim
     setup_vim
-    # Setting up tmux
-    setup_tmux
     # Configuring iTerm2
     configure_iterm2
     # Update /etc/hosts
     update_hosts_file
     # Setting up macOS defaults
-    setup_macOS_defaults
+    # setup_macOS_defaults
     # Updating login items
     update_login_items
 }
 
-DOTFILES_REPO=~/personal/dotfiles
+DOTFILES_REPO=$HOME/Documents/Github/dotfiles-1
 
 function ask_for_sudo() {
     info "Prompting for sudo password..."
@@ -113,37 +111,37 @@ function brew_install() {
     fi
 }
 
-function change_shell_to_fish() {
-    info "Fish shell setup..."
-    if grep --quiet fish <<< "$SHELL"; then
-        success "Fish shell already exists."
+function change_shell_to_zsh() {
+    info "zsh shell setup..."
+    if grep --quiet zsh <<< "$SHELL"; then
+        success "zsh shell already exists."
     else
         user=$(whoami)
-        substep "Adding Fish executable to /etc/shells"
+        substep "Adding zsh executable to /etc/shells"
         if grep --fixed-strings --line-regexp --quiet \
-            "/usr/local/bin/fish" /etc/shells; then
-            substep "Fish executable already exists in /etc/shells"
+            "/usr/local/bin/zsh" /etc/shells; then
+            substep "zsh executable already exists in /etc/shells"
         else
-            if echo /usr/local/bin/fish | sudo tee -a /etc/shells > /dev/null;
+            if echo /usr/local/bin/zsh | sudo tee -a /etc/shells > /dev/null;
             then
-                substep "Fish executable successfully added to /etc/shells"
+                substep "zsh executable successfully added to /etc/shells"
             else
-                error "Failed to add Fish executable to /etc/shells"
+                error "Failed to add zsh executable to /etc/shells"
                 exit 1
             fi
         fi
-        substep "Switching shell to Fish for \"${user}\""
-        if sudo chsh -s /usr/local/bin/fish "$user"; then
-            success "Fish shell successfully set for \"${user}\""
+        substep "Switching shell to zsh for \"${user}\""
+        if sudo chsh -s /usr/local/bin/zsh "$user"; then
+            success "zsh shell successfully set for \"${user}\""
         else
-            error "Please try setting the Fish shell again."
+            error "Please try setting the zsh shell again."
         fi
     fi
 }
 
 function configure_git() {
-    username="Sajjad Hosseini"
-    email="sajjad.hosseini@futurice.com"
+    username="nathanmlim"
+    email="nathanmlim@gmail.com"
 
     info "Configuring git..."
     if git config --global user.name "$username" && \
@@ -160,7 +158,7 @@ function clone_dotfiles_repo() {
         substep "${DOTFILES_REPO} already exists."
         pull_latest $DOTFILES_REPO
     else
-        url=https://github.com/Sajjadhosn/dotfiles.git
+        url=https://github.com/nathanmlim/dotfiles-1.git
         if git clone "$url" $DOTFILES_REPO; then
             success "Cloned into ${DOTFILES_REPO}"
         else
@@ -204,35 +202,6 @@ function setup_vim() {
     success "vim successfully setup."
 }
 
-function setup_tmux() {
-    info "Setting up tmux..."
-    substep "Installing tpm"
-    if test -e ~/.tmux/plugins/tpm; then
-        substep "tpm already exists."
-        pull_latest ~/.tmux/plugins/tpm
-    else
-        url=https://github.com/tmux-plugins/tpm
-        if git clone "$url" ~/.tmux/plugins/tpm; then
-            substep "tpm installation succeeded."
-        else
-            error "tpm installation failed."
-            exit 1
-        fi
-    fi
-
-    substep "Installing all plugins"
-
-    # sourcing .tmux.conf is necessary for tpm
-    tmux source-file ~/.tmux.conf 2> /dev/null
-
-    if ~/.tmux/plugins/tpm/bin/./install_plugins; then
-        substep "Plugin installation succeeded."
-    else
-        error "Plugin installation failed."
-        exit 1
-    fi
-    success "tmux successfully setup."
-}
 
 function configure_iterm2() {
     info "Configuring iTerm2..."
@@ -271,13 +240,13 @@ function setup_symlinks() {
     cp \
         ${DOTFILES_REPO}/spectacle/Shortcuts.json \
         ~/Library/Application\ Support/Spectacle/Shortcuts.json
-    symlink "fish:completions" ${DOTFILES_REPO}/fish/completions \
-        ~/.config/fish/completions
-    symlink "fish:functions" ${DOTFILES_REPO}/fish/functions \
-        ~/.config/fish/functions
-    symlink "fish:config.fish" ${DOTFILES_REPO}/fish/config.fish \
-        ~/.config/fish/config.fish
-    symlink "fish:oh_my_fish" ${DOTFILES_REPO}/fish/oh_my_fish  ~/.config/omf
+    symlink "zsh:completions" ${DOTFILES_REPO}/zsh/completions \
+        ~/.config/zsh/completions
+    symlink "zsh:functions" ${DOTFILES_REPO}/zsh/functions \
+        ~/.config/zsh/functions
+    symlink "zsh:config.zsh" ${DOTFILES_REPO}/zsh/config.zsh \
+        ~/.config/zsh/config.zsh
+    symlink "zsh:oh_my_zsh" ${DOTFILES_REPO}/zsh/oh_my_zsh  ~/.config/omf
     success "Symlinks successfully setup."
 }
 
@@ -448,4 +417,4 @@ function error() {
     coloredEcho "$1" red "========>"
 }
 
-main "$@"
+#main "$@"
