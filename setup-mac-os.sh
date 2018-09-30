@@ -10,7 +10,7 @@ main() {
     # Ensuring the user is logged in the App Store so that
     # install_packages_with_brewfile can install App Store applications
     # using mas cli application
-    login_to_app_store
+    #login_to_app_store
     # Cloning Dotfiles repository for install_packages_with_brewfile
     # to have access to Brewfile
     clone_dotfiles_repo
@@ -29,9 +29,9 @@ main() {
     yarn_packages=(prettier typescript)
     yarn_install "${yarn_packages[@]}"
     # Setting up symlinks so that setup_vim can install all plugins
-    setup_symlinks
+    #setup_symlinks
     # Setting up Vim
-    setup_vim
+    #setup_vim
     # Configuring iTerm2
     configure_iterm2
     # Update /etc/hosts
