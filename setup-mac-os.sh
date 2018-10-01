@@ -331,25 +331,6 @@ else
 fi
 }
 
-function yarn_install() {
-    packages_to_install=("$@")
-
-    for package_to_install in "${packages_to_install[@]}"
-    do
-        info "yarn global add ${package_to_install}"
-        if yarn global list | grep "$package_to_install" &> /dev/null; then
-            success "${package_to_install} already exists."
-        else
-            if yarn global add "$package_to_install"; then
-                success "Package ${package_to_install} installation succeeded."
-            else
-                error "Package ${package_to_install} installation failed."
-                exit 1
-            fi
-        fi
-    done
-}
-
 function pip3_install() {
     packages_to_install=("$@")
 
