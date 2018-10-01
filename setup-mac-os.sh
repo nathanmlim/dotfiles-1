@@ -421,4 +421,4 @@ function error() {
     coloredEcho "$1" red "========>"
 }
 
-#main "$@"
+main "$@"

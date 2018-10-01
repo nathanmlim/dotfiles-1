@@ -58,7 +58,7 @@ brew "xz" # General-purpose data compression with high compression ratio
 brew "bash" # Bourne-Again SHell, a UNIX command interpreter
 brew "bash-completion"
 brew "node", link: false # Platform built on V8 to build network applications
-brew "python",
+brew "python"
 brew "ruby"
 brew "perl"
 
