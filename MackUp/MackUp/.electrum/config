@@ -1,0 +1,12 @@
+{
+    "auto_connect": true,
+    "config_version": 2,
+    "console-history": [],
+    "gui_last_wallet": "/Users/nathanlim/.electrum/wallets/default_wallet",
+    "is_maximized": false,
+    "recently_open": [
+        "/Users/nathanlim/.electrum/wallets/default_wallet"
+    ],
+    "rpcpassword": "HqT4_4XBGdi507WVAKb6bg==",
+    "rpcuser": "user"
+}

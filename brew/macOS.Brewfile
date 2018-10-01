@@ -1,6 +1,5 @@
 cask_args appdir: "/Applications"
 
-
 ### TAPS
 tap "getantibody/tap"
 tap "homebrew/bundle"
@@ -78,32 +77,32 @@ brew "brew-pip" # Install pip packages as homebrew formulae
 brew "brew-cask-completion" # Fish completion for brew-cask
 
 ###### CASK ######
-# Fonts
-cask "font-fira-code"
-cask "font-hack-nerd-font"
-cask "font-sourcecodepro-nerd-font"
-cask "font-meslo-nerd-font"
-
-# Finder
-cask "qlcolorcode"
-cask "qlmarkdown"
-cask "qlprettypatch"
-cask "qlstephen"
-cask "quicklook-csv"
-cask "quicklook-json"
-cask "webpquicklook"
-cask "wkhtmltopdf"
-
-# Google
-# cask "google-chrome"
-# cask "google-backup-and-sync"
-# cask "chrome-remote-desktop"
-
-# Dev
-cask "atom"
-cask "anaconda"
-cask "iterm2"
-cask "xquartz"
+# # Fonts
+# cask "font-fira-code"
+# cask "font-hack-nerd-font"
+# cask "font-sourcecodepro-nerd-font"
+# cask "font-meslo-nerd-font"
+#
+# # Finder
+# cask "qlcolorcode"
+# cask "qlmarkdown"
+# cask "qlprettypatch"
+# cask "qlstephen"
+# cask "quicklook-csv"
+# cask "quicklook-json"
+# cask "webpquicklook"
+# cask "wkhtmltopdf"
+#
+# # Google
+# # cask "google-chrome"
+# # cask "google-backup-and-sync"
+# # cask "chrome-remote-desktop"
+#
+# # Dev
+# cask "atom"
+# cask "anaconda"
+# cask "iterm2"
+# cask "xquartz"
 
 # Apps
 # cask "evernote"

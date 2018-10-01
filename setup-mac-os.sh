@@ -6,7 +6,7 @@ main() {
     # Installing Homebrew, the basis of anything and everything
     install_homebrew
     # Installing mas using brew as the requirement for login_to_app_store
-    brew_install mas
+    #brew_install mas
     # Ensuring the user is logged in the App Store so that
     # install_packages_with_brewfile can install App Store applications
     # using mas cli application
@@ -24,10 +24,6 @@ main() {
     # and requests and dotenv as the basis for a regular python script
     pip_packages=(powerline-status requests python-dotenv flake8)
     pip3_install "${pip_packages[@]}"
-    # Installing typescript so that YouCompleteMe can support it
-    # and prettier so that Neoformat can auto-format files
-    yarn_packages=(prettier typescript)
-    yarn_install "${yarn_packages[@]}"
     # Setting up symlinks so that setup_vim can install all plugins
     setup_symlinks
     # Setting up Vim
@@ -88,11 +84,16 @@ url=https://raw.githubusercontent.com/Sajjadhosn/dotfiles/master/installers/home
 
 function install_packages_with_brewfile() {
     info "Installing packages within ${DOTFILES_REPO}/brew/macOS.Brewfile ..."
-    if brew bundle --file=$DOTFILES_REPO/brew/macOS.Brewfile; then
-        success "Brewfile installation succeeded."
+
+    if brew bundle check --file=$DOTFILES_REPO/brew/macOS.Brewfile; then
+        info "brew bundle check --file=$DOTFILES_REPO/brew/macOS.Brewfile"
     else
-        error "Brewfile installation failed."
-        exit 1
+        if brew bundle --file=$DOTFILES_REPO/brew/macOS.Brewfile; then
+            success "Brewfile installation succeeded."
+        else
+            error "Brewfile installation failed."
+            exit 1
+        fi
     fi
 }
 
@@ -237,21 +238,6 @@ function setup_symlinks() {
     symlink "zsh" ${DOTFILES_REPO}/zsh/zshrc ~/.zshrc
     symlink "zsh" ${DOTFILES_REPO}/zsh/zsh_plugins.txt ~/.config/zsh/zsh_plugins.txt
     symlink "zsh" ${DOTFILES_REPO}/zsh/iterm2_shell_integration.sh ~/.iterm2_shell_integration.zsh
-
-    #symlink "spectacle" \
-    # the above line should be commented out and used instead of the "cp" below
-    # when Spectacle fixes the sorting issue of Shortcuts.json file
-    # cp \
-    #     ${DOTFILES_REPO}/spectacle/Shortcuts.json \
-    #     ~/Library/Application\ Support/Spectacle/Shortcuts.json
-    # symlink "zsh:completions" ${DOTFILES_REPO}/zsh/completions \
-    #     ~/.config/zsh/completions
-    # symlink "zsh:functions" ${DOTFILES_REPO}/zsh/functions \
-    #     ~/.config/zsh/functions
-    # symlink "zsh:config.zsh" ${DOTFILES_REPO}/zsh/config.zsh \
-    #     ~/.config/zsh/config.zsh
-    # symlink "zsh:oh_my_zsh" ${DOTFILES_REPO}/zsh/oh_my_zsh  ~/.config/omf
-    # success "Symlinks successfully setup."
 }
 
 function symlink() {
