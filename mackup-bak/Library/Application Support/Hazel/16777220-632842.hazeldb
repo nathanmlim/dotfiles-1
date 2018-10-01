@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Contents</key>
+	<dict>
+		<key>.DS_Store</key>
+		<dict>
+			<key>File ID</key>
+			<string>831209</string>
+		</dict>
+		<key>.localized</key>
+		<dict>
+			<key>File ID</key>
+			<string>632843</string>
+		</dict>
+		<key>DTT CompSummary.png</key>
+		<dict>
+			<key>Date Moved</key>
+			<date>2017-06-06T05:57:35Z</date>
+			<key>File ID</key>
+			<string>23648908</string>
+			<key>Moved Count</key>
+			<integer>1</integer>
+			<key>Predicted Process Time</key>
+			<real>518507852</real>
+		</dict>
+		<key>DTTCompSummary.pdf</key>
+		<dict>
+			<key>Date Matched</key>
+			<date>2017-06-06T05:33:05Z</date>
+			<key>File ID</key>
+			<string>23644490</string>
+			<key>Predicted Process Time</key>
+			<real>518506380</real>
+		</dict>
+	</dict>
+	<key>File Map</key>
+	<dict>
+		<key>22673407</key>
+		<dict>
+			<key>Name</key>
+			<string>.DS_Store</string>
+		</dict>
+		<key>23644490</key>
+		<dict>
+			<key>Name</key>
+			<string>DTTCompSummary.pdf</string>
+		</dict>
+		<key>632843</key>
+		<dict>
+			<key>Name</key>
+			<string>.localized</string>
+		</dict>
+	</dict>
+	<key>Last Poll Time</key>
+	<date>2017-06-06T05:57:37Z</date>
+	<key>Version</key>
+	<integer>3</integer>
+</dict>
+</plist>

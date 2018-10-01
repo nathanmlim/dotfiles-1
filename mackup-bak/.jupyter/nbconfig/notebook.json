@@ -1,0 +1,14 @@
+{
+  "Cell": {
+    "cm_config": {
+      "lineNumbers": false
+    }
+  },
+  "Notebook": {
+    "Toolbar": true,
+    "Header": true
+  },
+  "load_extensions": {
+    "nglview-js-widgets/extension": true
+  }
+}

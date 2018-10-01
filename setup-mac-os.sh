@@ -240,6 +240,8 @@ function setup_symlinks() {
     symlink "zsh" ${DOTFILES_REPO}/zsh/iterm2_shell_integration.sh ~/.iterm2_shell_integration.zsh
 }
 
+
+
 function symlink() {
     application=$1
     point_to=$2
