@@ -35,7 +35,7 @@ main() {
     # Setting up macOS defaults
     # setup_macOS_defaults
     # Updating login items
-    update_login_items
+    #update_login_items
 }
 
 DOTFILES_REPO=$HOME/Documents/Github/dotfiles-1
