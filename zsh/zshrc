@@ -58,7 +58,7 @@ source "${HOME}/.iterm2_shell_integration.zsh"
 # Load antibody plugin manager
 source <(antibody init)
 
-antibody bundle < ~/.zsh_plugins.txt
+antibody bundle < ~/.config/zsh/zsh_plugins.txt
 
 # Keybindings
 bindkey '^[[A' history-substring-search-up
@@ -155,7 +155,6 @@ fi
 conda activate
 
 source ~/.bash_aliases
-source ~/.iterm2_shell_integration.zsh
 alias cppcompile='c++ -std=c++11 -stdlib=libc++'
 alias git='g'
 alias lc='colorls -lA --sd'

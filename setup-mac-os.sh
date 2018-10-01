@@ -234,6 +234,10 @@ function setup_symlinks() {
     symlink "powerline" \
         ${DOTFILES_REPO}/powerline \
         ${POWERLINE_ROOT_REPO}/powerline/config_files
+    symlink "zsh" ${DOTFILES_REPO}/zsh/zshrc ~/.zshrc
+    symlink "zsh" ${DOTFILES_REPO}/zsh/zsh_plugins.txt ~/.config/zsh/zsh_plugins.txt
+    symlink "zsh" ${DOTFILES_REPO}/zsh/iterm2_shell_integration.sh ~/.iterm2_shell_integration.zsh
+
     #symlink "spectacle" \
     # the above line should be commented out and used instead of the "cp" below
     # when Spectacle fixes the sorting issue of Shortcuts.json file
