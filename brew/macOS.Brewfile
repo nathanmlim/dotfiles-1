@@ -7,7 +7,6 @@ tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/cask-fonts"
 tap "homebrew/core"
-tap "homebrew/dupes"
 tap "homebrew/science"
 tap "mas-cli/tap"
 
@@ -96,9 +95,9 @@ cask "webpquicklook"
 cask "wkhtmltopdf"
 
 # Google
-cask "google-chrome"
-cask "google-backup-and-sync"
-cask "chrome-remote-desktop"
+# cask "google-chrome"
+# cask "google-backup-and-sync"
+# cask "chrome-remote-desktop"
 
 # Dev
 cask "atom"
@@ -107,16 +106,16 @@ cask "iterm2"
 cask "xquartz"
 
 # Apps
-cask "evernote"
-cask "alfred"
-cask "appcleaner"
-cask "the-unarchiver"
-cask "vlc"
-cask "slack"
-cask "spark"
-cask "spotify"
-cask "bettertouchtool"
-cask "mtmr"
+# cask "evernote"
+# cask "alfred"
+# cask "appcleaner"
+# cask "the-unarchiver"
+# cask "vlc"
+# cask "slack"
+# cask "spark"
+# cask "spotify"
+# cask "bettertouchtool"
+# cask "mtmr"
 
 # VM - Requires manual installation of VirtualBox
 # https://www.virtualbox.org
