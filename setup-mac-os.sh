@@ -29,9 +29,9 @@ main() {
     yarn_packages=(prettier typescript)
     yarn_install "${yarn_packages[@]}"
     # Setting up symlinks so that setup_vim can install all plugins
-    #setup_symlinks
+    setup_symlinks
     # Setting up Vim
-    #setup_vim
+    setup_vim
     # Configuring iTerm2
     configure_iterm2
     # Update /etc/hosts
@@ -237,17 +237,17 @@ function setup_symlinks() {
     #symlink "spectacle" \
     # the above line should be commented out and used instead of the "cp" below
     # when Spectacle fixes the sorting issue of Shortcuts.json file
-    cp \
-        ${DOTFILES_REPO}/spectacle/Shortcuts.json \
-        ~/Library/Application\ Support/Spectacle/Shortcuts.json
-    symlink "zsh:completions" ${DOTFILES_REPO}/zsh/completions \
-        ~/.config/zsh/completions
-    symlink "zsh:functions" ${DOTFILES_REPO}/zsh/functions \
-        ~/.config/zsh/functions
-    symlink "zsh:config.zsh" ${DOTFILES_REPO}/zsh/config.zsh \
-        ~/.config/zsh/config.zsh
-    symlink "zsh:oh_my_zsh" ${DOTFILES_REPO}/zsh/oh_my_zsh  ~/.config/omf
-    success "Symlinks successfully setup."
+    # cp \
+    #     ${DOTFILES_REPO}/spectacle/Shortcuts.json \
+    #     ~/Library/Application\ Support/Spectacle/Shortcuts.json
+    # symlink "zsh:completions" ${DOTFILES_REPO}/zsh/completions \
+    #     ~/.config/zsh/completions
+    # symlink "zsh:functions" ${DOTFILES_REPO}/zsh/functions \
+    #     ~/.config/zsh/functions
+    # symlink "zsh:config.zsh" ${DOTFILES_REPO}/zsh/config.zsh \
+    #     ~/.config/zsh/config.zsh
+    # symlink "zsh:oh_my_zsh" ${DOTFILES_REPO}/zsh/oh_my_zsh  ~/.config/omf
+    # success "Symlinks successfully setup."
 }
 
 function symlink() {

@@ -211,6 +211,7 @@ set writebackup " write backup before overwriting a file, delete it afterwards
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Indentation configurations
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set smartindent
 set expandtab " tab becomes a shortcut to insert four spaces
 set shiftwidth=4 " number of spaces to use for auto indent
 set softtabstop=4 " number of spaces in tab when editing
